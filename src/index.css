@@ -67,6 +67,19 @@ main h2 {
   color: #a18aba;
 }
 
+#core-concept {
+  display: flex;
+  justify-content: space-around;
+  background: #03d5ff;
+  padding: 2px;
+  flex-direction: row;
+}
+
+/* justifyContent: space-around, 
+flexWrap: wrap, 
+background: #f0f0f0, 
+padding: 20px */
+
 #core-concepts ul {
   list-style: none;
   padding: 0;

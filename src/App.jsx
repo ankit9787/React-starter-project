@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { CORE_CONCEPTS } from "./data";
-import Header from "./Header";
-import TabButton from "./TabButton";
+import Header from "./Header.jsx";
+import CoreConcepts from "./CoreConcepts.jsx";
+import Examples from "./Examples.jsx";
 
 function CoreConcept({ title, description }) {
   return (
@@ -13,33 +13,14 @@ function CoreConcept({ title, description }) {
 }
 
 function App() {
-  const [tabContent, setTabContent] = useState();
-
-  const handleClick = (selectedButton) => {
-    setTabContent("hello world app js " + selectedButton);
-  };
-
   return (
     <div>
       <Header></Header>
       <main>
         <h2>Time to get started!</h2>
       </main>
-      <section>
-        {CORE_CONCEPTS.map((concept) => (
-          <CoreConcept key={concept.title} {...concept}></CoreConcept>
-        ))}
-      </section>
-      <section id="examples">
-        <h2>Examples</h2>
-        <menu>
-          <TabButton onSelect={() => handleClick("Components")}>
-            Components
-          </TabButton>
-          <TabButton onSelect={() => handleClick("Core")}>Core</TabButton>
-        </menu>
-        <section>{tabContent}</section>
-      </section>
+      <CoreConcepts></CoreConcepts>
+      <Examples></Examples>
     </div>
   );
 }
